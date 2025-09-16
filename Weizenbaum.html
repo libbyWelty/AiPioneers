@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Weizenbaum: AI Pioneer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevents scrollbars from flashing during slide transitions */
+        }
+        .slide {
+            display: none; /* Hidden by default */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block; /* Shown when active */
+            opacity: 1;
+        }
+        .slide-content {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .resource-btn {
+            transition: all 0.3s ease;
+        }
+        .resource-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div id="presentation-container" class="w-full max-w-4xl h-[600px] bg-white rounded-2xl shadow-2xl overflow-hidden relative flex flex-col">
+        <!-- Slides -->
+        <div class="flex-grow p-8 md:p-12 overflow-y-auto">
+
+            <!-- Slide 0: Title -->
+            <div id="slide-0" class="slide active">
+                <div class="slide-content h-full flex flex-col items-center justify-center text-center">
+                    <img src="https://placehold.co/150x150/E2E8F0/4A5568?text=JW" alt="Joseph Weizenbaum placeholder" class="rounded-full mb-6 shadow-lg">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Joseph Weizenbaum</h1>
+                    <p class="text-xl md:text-2xl text-indigo-600">Pioneer, Prophet, and Critic of AI</p>
+                    <p class="mt-6 text-gray-500">An interactive presentation on his life, work, and enduring legacy.</p>
+                </div>
+            </div>
+
+            <!-- Slide 1: Early Life -->
+            <div id="slide-1" class="slide">
+                <div class="slide-content">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Early Life and Education</h2>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4 text-lg text-gray-700">
+                           <p><strong class="text-indigo-600">1923:</strong> Born in Berlin, Germany, to a Jewish family.</p>
+                           <p><strong class="text-indigo-600">1936:</strong> Fled Nazi Germany with his family, immigrating to the United States.</p>
+                           <p><strong class="text-indigo-600">WWII:</strong> His studies in mathematics were interrupted by service in the U.S. Army Air Corps.</p>
+                           <p><strong class="text-indigo-600">Post-War:</strong> Completed his Master's degree in Mathematics from Wayne State University in Detroit.</p>
+                        </div>
+                        <div class="flex justify-center">
+                             <img src="https://placehold.co/400x300/E2E8F0/4A5568?text=Fleeing+Nazi+Germany" alt="Historical context placeholder" class="rounded-lg shadow-md object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Major Contributions -->
+            <div id="slide-2" class="slide">
+                 <div class="slide-content">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Major Contributions</h2>
+                    <div class="space-y-6">
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-indigo-700">Early Computer Systems</h3>
+                            <p class="mt-2 text-gray-600">In the 1950s at General Electric, he was instrumental in developing one of the first computer systems for banking operations, a pioneering step in commercial computing.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-indigo-700">SLIP Programming Language</h3>
+                            <p class="mt-2 text-gray-600">At MIT, he developed SLIP (Symmetric List Processing), an early and influential list-processing language that was a competitor to LISP in the early days of AI research.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-indigo-700">ELIZA Chatbot Program</h3>
+                            <p class="mt-2 text-gray-600">His most famous creation, ELIZA, was a landmark in natural language processing and is considered the ancestor of all modern chatbots. This work sparked a global conversation about human-computer interaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: The ELIZA Program -->
+            <div id="slide-3" class="slide">
+                <div class="slide-content">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">The ELIZA Program (1966)</h2>
+                     <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                             <img src="https://placehold.co/400x300/E2E8F0/4A5568?text=ELIZA+Code" alt="ELIZA program placeholder" class="rounded-lg shadow-md object-cover">
+                        </div>
+                        <div class="space-y-4 text-lg text-gray-700">
+                           <p>ELIZA simulated a conversation with a Rogerian psychotherapist by using <strong class="text-indigo-600">keyword matching and scripted responses</strong>.</p>
+                           <p>It was intended to demonstrate the <strong class="text-indigo-600">superficiality</strong> of human-machine communication.</p>
+                            <p>To his shock, users formed <strong class="text-indigo-600">deep emotional bonds</strong> with the program, a phenomenon now called the "ELIZA effect."</p>
+                           <p>This unexpected reaction fundamentally changed Weizenbaum's perspective on AI and its role in society.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4: A Shift to Criticism -->
+            <div id="slide-4" class="slide">
+                <div class="slide-content">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">A Shift to Criticism</h2>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                         <div class="space-y-4 text-lg text-gray-700">
+                           <p>Troubled by the reaction to ELIZA, Weizenbaum became one of AI's most prominent critics.</p>
+                           <p>In his 1976 book, <strong class="text-indigo-600">"Computer Power and Human Reason,"</strong> he warned against giving computers tasks that require uniquely human qualities like wisdom and compassion.</p>
+                            <p>He argued that a mechanistic view of humanity was dangerous and that there were fundamental differences between <strong class="text-indigo-600">"calculating" and "judging."</strong></p>
+                         </div>
+                         <div>
+                            <img src="https://placehold.co/400x300/E2E8F0/4A5568?text=Human+vs+Machine" alt="Human vs Machine concept" class="rounded-lg shadow-md object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Influence on Modern AI -->
+            <div id="slide-5" class="slide">
+                <div class="slide-content">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Influence on Modern AI</h2>
+                    <div class="space-y-6">
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-indigo-700">The Foundation for Chatbots</h3>
+                            <p class="mt-2 text-gray-600">ELIZA's simple architecture is the direct ancestor of every conversational AI we use today, from customer service bots to advanced large language models. It proved that machines could successfully engage in human-like dialogue.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-indigo-700">The Birth of AI Ethics</h3>
+                            <p class="mt-2 text-gray-600">Weizenbaum's critical writings were foundational to the field of AI ethics. His questions about human dignity, autonomy, and the responsible use of technology are now central to the global conversation about AI's future.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 6: Resources -->
+            <div id="slide-6" class="slide">
+                <div class="slide-content text-center">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8">Additional Resources</h2>
+                    <p class="text-lg text-gray-600 mb-10">Explore more about Joseph Weizenbaum's life and work through these resources.</p>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <a href="https://www.youtube.com/results?search_query=joseph+weizenbaum+documentary" target="_blank" class="resource-btn block p-6 bg-indigo-600 text-white rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2">Watch a Documentary</h3>
+                            <p>See interviews and archival footage of Weizenbaum discussing his work and his concerns.</p>
+                        </a>
+                        <a href="https://archive.org/details/computerpowerhum00weiz" target="_blank" class="resource-btn block p-6 bg-gray-700 text-white rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2">Read His Book</h3>
+                            <p>Explore "Computer Power and Human Reason" to understand his arguments in his own words.</p>
+                        </a>
+                        <a href="https://www.masswerk.at/elizabot/" target="_blank" class="resource-btn block p-6 bg-teal-500 text-white rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2">Interact with ELIZA</h3>
+                            <p>Try out a web-based version of the original ELIZA program and experience it for yourself.</p>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Joseph_Weizenbaum" target="_blank" class="resource-btn block p-6 bg-gray-200 text-gray-800 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2">Read the Biography</h3>
+                            <p>Get a detailed overview of his life, achievements, and publications on Wikipedia.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center p-4 bg-gray-50 border-t border-gray-200">
+            <button id="prevBtn" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">Previous</button>
+            <span id="slide-counter" class="text-sm text-gray-500">1 / 7</span>
+            <button id="nextBtn" class="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideCounter = document.getElementById('slide-counter');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            // Deactivate all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Activate the correct slide
+            const activeSlide = document.getElementById(`slide-${index}`);
+            if (activeSlide) {
+                activeSlide.classList.add('active');
+            }
+            
+            currentSlide = index;
+            updateUI();
+        }
+
+        function updateUI() {
+            // Update counter
+            slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+            
+            // Update button states
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(0);
+        });
+    </script>
+
+</body>
+</html>
