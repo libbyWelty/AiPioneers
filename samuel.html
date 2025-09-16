@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Samuel: The Pioneer of Machine Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        .slide-content {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .nav-button {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .resource-button {
+             background-color: #3b82f6;
+             color: white;
+             transition: background-color 0.3s;
+        }
+        .resource-button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6">
+
+    <div id="presentation-container" class="w-full max-w-4xl mx-auto">
+        
+        <!-- Slide 0: Title -->
+        <section class="slide active">
+            <div class="slide-content">
+                <div class="p-8 md:p-12 text-center flex flex-col justify-center items-center h-full aspect-[16/9]">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Arthur Samuel</h1>
+                    <p class="text-xl md:text-2xl text-blue-600">The Pioneer of Machine Learning</p>
+                    <div class="mt-8">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 1: Early Life & Education -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+                    <div class="p-8 flex flex-col justify-center">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Early Life & Education</h2>
+                        <ul class="list-disc list-inside space-y-3 text-gray-700 text-lg">
+                            <li>Born in Emporia, Kansas, in 1901.</li>
+                            <li>Graduated from the College of Emporia in 1923.</li>
+                            <li>Earned a Master's in Electrical Engineering from MIT in 1926.</li>
+                            <li>Conducted graduate work in physics at Columbia University.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center p-6 bg-gray-50">
+                        <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=MIT+Campus+Vintage" alt="Vintage photo of MIT campus" class="rounded-lg shadow-md max-h-full w-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Major Contributions to Computing -->
+        <section class="slide">
+            <div class="slide-content">
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+                    <div class="p-8 flex flex-col justify-center order-2 md:order-1">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Major Contributions to Computing</h2>
+                        <p class="text-gray-600 mb-4">Before his AI work, Samuel was a prolific inventor:</p>
+                        <ul class="list-disc list-inside space-y-3 text-gray-700 text-lg">
+                            <li>At Bell Labs, designed crucial radar components for WWII.</li>
+                            <li>Initiated the ILLIAC computer project at the University of Illinois.</li>
+                            <li>At IBM, he invented <span class="font-semibold text-blue-600">hashing</span>, a fundamental data-retrieval technique still used today.</li>
+                            <li>Pioneered non-numerical computation on early computers.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center p-6 bg-gray-50 order-1 md:order-2">
+                       <img src="https://placehold.co/600x400/dbeafe/1e3a8a?text=IBM+701+Computer" alt="Early IBM computer" class="rounded-lg shadow-md max-h-full w-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: The Checkers-Playing Program -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex flex-col h-full">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">The Checkers-Playing Program</h2>
+                        <p class="text-lg text-gray-700 text-center max-w-2xl mx-auto">
+                            Samuel's most famous work was a checkers program that could learn from its own mistakes. It was one of the world's first successful self-learning programs.
+                        </p>
+                    </div>
+                    <div class="flex-grow p-8 flex items-center justify-center bg-gray-50">
+                        
+                    </div>
+                    <div class="p-6 bg-blue-50 text-center">
+                        <p class="text-blue-800">In a public demonstration in 1956, the program consistently improved, showing the potential for machines to learn and adapt.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: The Birth of "Machine Learning" -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+                    <div class="p-8 flex flex-col justify-center">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">The Birth of "Machine Learning"</h2>
+                        <p class="text-gray-700 text-lg mb-4">In 1959, Samuel coined the term <span class="font-bold text-blue-600">"machine learning,"</span> defining it as:</p>
+                        <blockquote class="border-l-4 border-blue-500 pl-4 italic text-gray-600">
+                            "The field of study that gives computers the ability to learn without being explicitly programmed."
+                        </blockquote>
+                        <p class="text-gray-700 text-lg mt-4">He introduced key concepts like <span class="font-semibold">rote learning</span>, <span class="font-semibold">generalization</span>, and <span class="font-semibold">alpha-beta pruning</span>.</p>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center p-6 bg-gray-50">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Influence on Modern AI -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex flex-col h-full">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Influence on Modern AI</h2>
+                        <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto">
+                            Samuel's foundational work directly influenced nearly every aspect of modern AI. The principles of self-improvement and learning from data are core to today's technologies.
+                        </p>
+                    </div>
+                    <div class="p-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800">Reinforcement Learning</h3>
+                            <p class="text-blue-700">Systems that learn by trial and error, like AI in games (AlphaGo).</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800">Recommendation Engines</h3>
+                            <p class="text-green-700">Predicting what you might like on Netflix or Amazon.</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-yellow-800">Autonomous Systems</h3>
+                            <p class="text-yellow-700">Self-driving cars learning to navigate complex environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Legacy & Further Resources -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="p-8 md:p-12 text-center flex flex-col justify-center items-center h-full aspect-[16/9]">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Legacy & Resources</h2>
+                    <p class="text-lg text-gray-700 max-w-2xl mb-8">
+                        Arthur Samuel's curiosity transformed computing from simple calculation into the dawn of artificial intelligence. His work proved that machines could learn, adapt, and grow.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-2xl">
+                        <a href="https://www.youtube.com/watch?v=4h0QpNWrPbg" target="_blank" class="resource-button font-medium py-3 px-4 rounded-lg shadow-md text-center">
+                            Watch: Samuel on TV
+                        </a>
+                        <a href="https://people.csail.mit.edu/brooks/idocs/Samuel.pdf" target="_blank" class="resource-button font-medium py-3 px-4 rounded-lg shadow-md text-center">
+                            Read: His 1959 Paper
+                        </a>
+                         <a href="https://www.geeksforgeeks.org/alpha-beta-pruning/" target="_blank" class="resource-button font-medium py-3 px-4 rounded-lg shadow-md text-center">
+                            Explore: Alpha-Beta Pruning
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="flex justify-between w-full max-w-4xl mt-6">
+        <button id="prev-btn" class="nav-button bg-white text-gray-700 font-bold py-2 px-6 rounded-lg shadow-md disabled:opacity-50 disabled:cursor-not-allowed">Previous</button>
+        <div id="slide-indicator" class="flex items-center text-gray-600"></div>
+        <button id="next-btn" class="nav-button bg-blue-600 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 disabled:opacity-50">Next</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideIndicator = document.getElementById('slide-indicator');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function updateSlides() {
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentSlide);
+                });
+                
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
+                
+                slideIndicator.textContent = `Slide ${currentSlide + 1} of ${totalSlides}`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    updateSlides();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlides();
+                }
+            });
+
+            // Initialize
+            updateSlides();
+        });
+    </script>
+</body>
+</html>
