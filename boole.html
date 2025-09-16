@@ -3,141 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George Boole Presentation</title>
+    <title>George Boole: Architect of the Digital Universe</title>
     <style>
-        /* Basic Body Styling */
+        /* Basic Styles */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #f0f2f5;
             color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Presentation Container */
+        .presentation-container {
+            width: 90%;
+            max-width: 900px;
+            height: 90vh;
+            max-height: 600px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            margin: 0;
+            overflow: hidden;
+            position: relative;
         }
 
-        /* Main Title */
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        /* Slide Container Styling */
+        /* Slide Styles */
         .slide {
-            background-color: #ffffff;
-            border: 1px solid #dfe6e9;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 25px;
-            padding: 25px 30px;
-            width: 100%;
-            max-width: 800px;
-            box-sizing: border-box;
+            padding: 40px 50px;
+            flex-grow: 1;
+            display: none; /* Hide all slides by default */
+            animation: fadeIn 0.5s ease-in-out;
         }
 
-        /* Slide Titles */
+        .slide.active {
+            display: block; /* Show the active slide */
+        }
+
         .slide h2 {
-            font-size: 1.6em;
-            color: #0984e3;
-            border-bottom: 2px solid #0984e3;
-            padding-bottom: 10px;
+            font-size: 2em;
+            color: #005a9c;
+            border-bottom: 3px solid #005a9c;
+            padding-bottom: 15px;
             margin-top: 0;
         }
+        
+        .slide-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
 
-        /* Image Styling */
+        .slide-text {
+            flex: 2;
+        }
+        
+        .slide-image {
+            flex: 1;
+            text-align: center;
+        }
+
         .slide img {
             max-width: 100%;
             height: auto;
-            border-radius: 5px;
-            margin: 15px 0;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* Button Styling */
-        .button-container {
-            margin-top: 20px;
+        /* Navigation Buttons */
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
         }
 
-        .button {
+        .nav-button {
             background-color: #007bff;
             color: white;
-            padding: 12px 20px;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             font-weight: bold;
-            text-decoration: none;
             cursor: pointer;
-            display: inline-block;
-            margin: 5px;
             transition: background-color 0.3s, transform 0.2s;
         }
 
-        .button:hover {
+        .nav-button:hover {
             background-color: #0056b3;
             transform: translateY(-2px);
         }
-
-        /* Link styling to remove underline from button text */
-        a {
-            text-decoration: none;
+        
+        .nav-button:disabled {
+            background-color: #c0c0c0;
+            cursor: not-allowed;
+            transform: none;
         }
+
+        /* Resource Buttons */
+        .resource-button {
+            background-color: #28a745;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .resource-button:hover {
+            background-color: #218838;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
     </style>
 </head>
 <body>
 
-    <h1>George Boole: The Father of the Information Age</h1>
+    <div class="presentation-container">
 
-    <div class="slide">
-        <h2>Slide 1: Early Life of a Self-Taught Genius</h2>
-        <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/George_Boole.max-1000x1000.jpeg" alt="Portrait of George Boole" style="max-width: 200px;">
-        <p><strong>George Boole (1815-1864)</strong> was a largely self-taught English mathematician, philosopher, and logician.</p>
-        <ul>
-            <li><strong>Humble Beginnings:</strong> Born into a family of modest means, Boole had very little formal education. A true prodigy, he taught himself advanced mathematics, Latin, and Greek.</li>
-            <li><strong>From Teacher to Professor:</strong> By age 20, he had opened his own school. Despite never attending a university himself, his groundbreaking research led to his appointment as the first professor of mathematics at Queen's College, Cork, in Ireland.</li>
-        </ul>
-    </div>
+        <!-- Slide 1 -->
+        <div class="slide active" id="slide1">
+            <h2>1. Early Life of a Self-Taught Genius</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <p><strong>George Boole (1815-1864)</strong> was a largely self-taught English mathematician and logician whose work became the foundation for the entire digital world.</p>
+                    <ul>
+                        <li><strong>Humble Beginnings:</strong> Born to a working-class family, Boole had little formal schooling. A prodigy, he taught himself advanced mathematics, Latin, and Greek.</li>
+                        <li><strong>From Teacher to Professor:</strong> Despite never attending a university, his brilliant research earned him a position as the first professor of mathematics at Queen's College, Cork, in Ireland.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/George_Boole_color.jpg" alt="Portrait of George Boole">
+                </div>
+            </div>
+        </div>
 
-    <div class="slide">
-        <h2>Slide 2: Major Contribution - Boolean Algebra</h2>
-        <p>Boole's most revolutionary work was his 1854 book, <strong><em>An Investigation of the Laws of Thought</em></strong>, where he introduced a new form of algebra.</p>
-        <ul>
-            <li><strong>Logic as Math:</strong> Boole's great insight was that logic could be represented by mathematical equations. This system, now called <strong>Boolean Algebra</strong>, is based on a simple but powerful idea: variables can only have two values, <strong>True</strong> or <strong>False</strong> (represented as 1 and 0).</li>
-            <li><strong>Logical Operators:</strong> He used simple operators like <strong>AND</strong>, <strong>OR</strong>, and <strong>NOT</strong> to create a complete system for logical calculation. For the first time, logic became a branch of mathematics.</li>
-        </ul>
-    </div>
+        <!-- Slide 2 -->
+        <div class="slide" id="slide2">
+            <h2>2. Major Contribution: The Laws of Thought</h2>
+             <div class="slide-content">
+                <div class="slide-text">
+                    <p>Boole's masterpiece was his 1854 book, <strong><em>An Investigation of the Laws of Thought</em></strong>. In it, he detailed his revolutionary invention: <strong>Boolean Algebra</strong>.</p>
+                    <ul>
+                        <li><strong>The Great Idea:</strong> Boole's breakthrough was demonstrating that logical statements could be expressed with algebra. He created a system where variables could only have two states: <strong>True</strong> or <strong>False</strong> (1 or 0).</li>
+                        <li><strong>Logical Operators:</strong> He used simple operators like <strong>AND, OR,</strong> and <strong>NOT</strong> to manipulate these variables, turning complex human reasoning into a simple, powerful form of mathematics.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="https://i.ebayimg.com/images/g/5mcAAOSw~xVfsf4L/s-l1200.jpg" alt="Title page of 'An Investigation of the Laws of Thought'">
+                </div>
+            </div>
+        </div>
 
-    <div class="slide">
-        <h2>Slide 3: The Language of Computers</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Boolean_logic_gates.svg/800px-Boolean_logic_gates.svg.png" alt="Diagram of Boolean Logic Gates">
-        <p>Decades after his death, Boole's work found its ultimate application. In the 1930s, engineer Claude Shannon realized that the True/False (1/0) nature of Boolean logic perfectly described the On/Off states of an electrical circuit.</p>
-        <ul>
-            <li><strong>Key Fact:</strong> Every digital device—from a supercomputer to your smartphone—is built from millions or billions of tiny electronic switches (transistors) that operate according to the rules of Boolean algebra.</li>
-            <li><strong>The Foundation of Hardware:</strong> These "logic gates" perform Boolean operations at incredible speeds, forming the physical basis of all modern computation.</li>
-        </ul>
-    </div>
-    
-    <div class="slide">
-        <h2>Slide 4: Influence on Modern AI</h2>
-        <p>While Boole never conceived of AI, he created its fundamental language. Every decision an AI makes is, at its most basic level, a series of Boolean calculations.</p>
-        <ul>
-            <li><strong>The Chain of Innovation:</strong> The path from his mind to modern AI is direct: <strong>Boole's Logic ➡️ The Digital Circuit ➡️ The Computer ➡️ Artificial Intelligence</strong></li>
-            <li><strong>AI in Action:</strong> When a machine learning model classifies an image or a search engine finds a result, it is executing complex algorithms built upon billions of simple True/False questions. Boole's system provides the logical grammar for every "thought" a computer has.</li>
-        </ul>
-    </div>
+        <!-- Slide 3 -->
+        <div class="slide" id="slide3">
+            <h2>3. The Language of Circuits and Computers</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                     <p>Nearly a century later, Boole's abstract logic found a perfect physical application. Engineer Claude Shannon showed that the True/False (1/0) system perfectly matched the On/Off states of electrical circuits.</p>
+                    <ul>
+                        <li><strong>Key Fact:</strong> Every digital device is built from millions of microscopic switches (transistors) that operate according to the rules of Boolean algebra.</li>
+                        <li><strong>Logic Gates:</strong> These transistors are arranged into "logic gates" that perform the <strong>AND, OR,</strong> and <strong>NOT</strong> functions, forming the physical hardware that powers all computation.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Boolean_logic_gates.svg/800px-Boolean_logic_gates.svg.png" alt="Boolean logic gates diagram">
+                </div>
+            </div>
+        </div>
 
-    <div class="slide">
-        <h2>Slide 5: Additional Resources</h2>
-        <div class="button-container">
-            <a href="https://www.youtube.com/watch?v=aEjzjLv-YjI" target="_blank"><button class="button">Watch: The Genius of George Boole</button></a>
-            <a href="https://www.youtube.com/watch?v=2zRJ1ShMcgA" target="_blank"><button class="button">Watch: Boolean Algebra Explained</button></a>
-            <a href="https://computer.howstuffworks.com/boolean.htm" target="_blank"><button class="button">Read: How Boolean Logic Works</button></a>
+        <!-- Slide 4 -->
+        <div class="slide" id="slide4">
+            <h2>4. Influence on Modern Artificial Intelligence</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                     <p>While Boole never imagined AI, he created its fundamental grammar. Every "decision" a computer or AI makes is, at its most basic level, a vast number of Boolean operations.</p>
+                    <ul>
+                        <li><strong>The Chain of Innovation:</strong> The path from his work to AI is direct and unbroken: Boole's Logic ➡️ The Digital Circuit ➡️ The Computer ➡️ Artificial Intelligence.</li>
+                        <li><strong>AI in Action:</strong> When a machine learning model classifies data, it uses a decision tree that asks a series of True/False questions. Boole's system provides the logical foundation for every algorithm.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="https://www.researchgate.net/profile/Stefan-Bolea/publication/343419999/figure/fig1/AS:921590426210304@1596726919010/The-development-of-artificial-intelligence-and-deep-learning-and-the-future-of-the.png" alt="Flowchart from Boolean logic to artificial intelligence">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide" id="slide5">
+            <h2>5. Additional Resources</h2>
+            <p>Click the buttons below to dive deeper into the life of George Boole and the profound impact of his work.</p>
+            <div>
+                <a href="https://www.youtube.com/watch?v=aEjzjLv-YjI" target="_blank"><button class="nav-button resource-button">Watch: The Genius of George Boole</button></a>
+                <a href="https://www.youtube.com/watch?v=2zRJ1ShMcgA" target="_blank"><button class="nav-button resource-button">Watch: Boolean Algebra Explained</button></a>
+                <a href="https://computer.howstuffworks.com/boolean.htm" target="_blank"><button class="nav-button resource-button">Read: How Boolean Logic Works</button></a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+            <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Next</button>
         </div>
     </div>
 
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        function showSlide(slideNumber) {
+            // Hide all slides
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById('slide' + i).classList.remove('active');
+            }
+            // Show the correct slide
+            document.getElementById('slide' + slideNumber).classList.add('active');
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = (slideNumber === 1);
+            document.getElementById('nextBtn').disabled = (slideNumber === totalSlides);
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlide(currentSlide);
+        }
+
+        // Initialize the first slide
+        showSlide(currentSlide);
+    </script>
+
 </body>
 </html>
+
