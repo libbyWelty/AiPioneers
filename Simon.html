@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbert A. Simon: AI Pioneer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        .btn {
+            @apply px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-transform transform hover:scale-105;
+        }
+        .resource-btn {
+            @apply w-full text-left px-4 py-3 bg-white text-gray-800 font-semibold rounded-lg border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-200 ease-in-out flex items-center space-x-3;
+        }
+        .card {
+            @apply bg-white p-8 rounded-2xl shadow-2xl;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div id="presentation" class="card w-full max-w-4xl mx-auto">
+
+        <!-- Slide 1: Title -->
+        <div id="slide-1" class="slide active">
+            <div class="text-center">
+                <img src="https://placehold.co/150x150/E2E8F0/4A5568?text=H.S." alt="Herbert Simon" class="mx-auto rounded-full mb-6 border-4 border-gray-200">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">Herbert A. Simon</h1>
+                <p class="text-xl text-blue-600 font-semibold">A Founding Father of Artificial Intelligence</p>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">An interactive presentation on his life, groundbreaking contributions, and enduring legacy in AI.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Early Life -->
+        <div id="slide-2" class="slide">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-500 pb-2">Early Life & Education</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <ul class="space-y-4 text-gray-700">
+                        <li><strong class="text-blue-600">Born:</strong> June 15, 1916, in Milwaukee, Wisconsin.</li>
+                        <li><strong class="text-blue-600">Intellectual Upbringing:</strong> His father was an engineer and his mother a pianist, fostering a blend of scientific and artistic curiosity.</li>
+                        <li><strong class="text-blue-600">University of Chicago:</strong> Enrolled in 1933, a hub for interdisciplinary studies. He earned his B.A. (1936) and Ph.D. (1943) in political science.</li>
+                        <li><strong class="text-blue-600">Polymath Foundation:</strong> Studied economics, mathematics, and logic, which became crucial for his later, multi-faceted work.</li>
+                    </ul>
+                </div>
+                <img src="https://placehold.co/400x300/E2E8F0/4A5568?text=University+of+Chicago" alt="University of Chicago" class="rounded-lg shadow-md object-cover">
+            </div>
+        </div>
+
+        <!-- Slide 3: Major Contributions -->
+        <div id="slide-3" class="slide">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-500 pb-2">Major Contributions</h2>
+             <div class="grid md:grid-cols-2 gap-8 items-center">
+                <img src="https://placehold.co/400x400/E2E8F0/4A5568?text=Bounded+Rationality" alt="Diagram of Bounded Rationality" class="rounded-lg shadow-md object-cover">
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3">Bounded Rationality & Satisficing</h3>
+                    <p class="text-gray-600 mb-4">Simon challenged the classical economic model of the perfectly rational "economic man." He argued that human decision-making is limited (or "bounded").</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><strong>Cognitive Limits:</strong> Humans have limited memory and processing power.</li>
+                        <li><strong>Incomplete Information:</strong> We rarely have all the facts to make a perfect choice.</li>
+                        <li><strong>Time Constraints:</strong> Decisions must often be made quickly.</li>
+                    </ul>
+                    <p class="mt-4 text-gray-800 bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">Instead of <strong class="text-blue-600">optimizing</strong> for the best possible outcome, people <strong class="text-blue-600">satisfice</strong>—choosing an option that is "good enough." This work earned him the Nobel Prize in Economics in 1978.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: AI Contributions -->
+        <div id="slide-4" class="slide">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-500 pb-2">Contributions to Artificial Intelligence</h2>
+            <div class="space-y-6">
+                <div class="p-4 bg-gray-50 rounded-lg border">
+                    <h3 class="text-xl font-semibold text-blue-700">Logic Theorist (1956)</h3>
+                    <p class="text-gray-700 mt-1">Co-created with Allen Newell, this is considered the <strong class="text-gray-900">first-ever AI program</strong>. It successfully proved 38 of the first 52 theorems in Whitehead and Russell's *Principia Mathematica*, demonstrating that machines could perform tasks requiring reason and creativity.</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg border">
+                    <h3 class="text-xl font-semibold text-blue-700">General Problem Solver (GPS) (1957)</h3>
+                    <p class="text-gray-700 mt-1">A more advanced program that introduced <strong class="text-gray-900">means-ends analysis</strong>. GPS could solve a wider variety of formal problems by comparing the current state to the goal state and taking steps to reduce the difference—a core concept in AI planning today.</p>
+                </div>
+                 <div class="p-4 bg-gray-50 rounded-lg border">
+                    <h3 class="text-xl font-semibold text-blue-700">Physical Symbol System Hypothesis</h3>
+                    <p class="text-gray-700 mt-1">A foundational concept in AI, it posits that intelligence arises from the manipulation of symbols according to rules. This provided the theoretical basis for symbolic AI.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Modern Influence -->
+        <div id="slide-5" class="slide">
+             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-500 pb-2">Influence on Modern AI</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <ul class="space-y-4 text-gray-700">
+                        <li><strong class="text-blue-600">Heuristic Search:</strong> His methods are the foundation for algorithms in GPS navigation, logistics, and gaming AI that find efficient solutions without exploring every possibility.</li>
+                        <li><strong class="text-blue-600">Cognitive Architectures:</strong> His focus on modeling human thought inspired systems used in robotics and human-computer interaction.</li>
+                        <li><strong class="text-blue-600">AI Decision-Making:</strong> The principle of "satisficing" is used to design AI agents that make "good enough" decisions quickly in complex environments, like in autonomous vehicles or automated financial trading.</li>
+                         <li><strong class="text-blue-600">Foundation for Machine Learning:</strong> His early ideas about systems that could learn and adapt from experience set the stage for the evolution of modern machine learning.</li>
+                    </ul>
+                </div>
+                <img src="https://placehold.co/400x300/E2E8F0/4A5568?text=Modern+AI+Systems" alt="Modern AI Systems" class="rounded-lg shadow-md object-cover">
+            </div>
+        </div>
+
+        <!-- Slide 6: Resources -->
+        <div id="slide-6" class="slide">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-500 pb-2">Additional Resources</h2>
+            <p class="text-gray-600 mb-6">Explore more about Herbert Simon's work and its impact through these selected resources.</p>
+            <div class="space-y-4">
+                <a href="https://www.youtube.com/watch?v=fV82_aG0KHY" target="_blank" class="resource-btn">
+                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                    <span><strong>Video:</strong> Herbert Simon on Decision-Making (Nobel Prize Interview)</span>
+                </a>
+                 <a href="https://www.cmu.edu/honorary-degrees/2021/herbert-a-simon.html" target="_blank" class="resource-btn">
+                    <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                    <span><strong>Article:</strong> Carnegie Mellon University's Tribute to Herbert Simon</span>
+                </a>
+                <a href="https://www.investopedia.com/terms/h/herbert-a-simon.asp" target="_blank" class="resource-btn">
+                    <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 16c1.255 0 2.443-.29 3.5-.804V4.804zM14.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 0114.5 16c1.255 0 2.443-.29 3.5-.804v-10A7.968 7.968 0 0014.5 4z"></path></svg>
+                    <span><strong>Explanation:</strong> Investopedia on Bounded Rationality</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-8 pt-6 border-t flex justify-between items-center">
+            <button id="prevBtn" class="btn" disabled>Previous</button>
+            <span id="slide-counter" class="text-gray-600 font-medium">1 / 6</span>
+            <button id="nextBtn" class="btn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slideCounter = document.getElementById('slide-counter');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    const slideElement = document.getElementById(`slide-${i + 1}`);
+                    if (i === index) {
+                        slideElement.classList.add('active');
+                    } else {
+                        slideElement.classList.remove('active');
+                    }
+                });
+
+                // Update slide counter
+                slideCounter.textContent = `${index + 1} / ${totalSlides}`;
+
+                // Update button states
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === totalSlides - 1;
+
+                if (prevBtn.disabled) {
+                    prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                } else {
+                    prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+
+                if (nextBtn.disabled) {
+                    nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                } else {
+                    nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+
+            // Initially show the first slide
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
