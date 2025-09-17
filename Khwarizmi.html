@@ -1,37 +1,249 @@
-### **Al-Khwarizmi: Architect of Modern Computation**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Khwarizmi: Architect of the Algorithm</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-An Interactive Presentation
+        /* Presentation Container */
+        .presentation-container {
+            width: 90%;
+            max-width: 900px;
+            height: 90vh;
+            max-height: 600px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
 
----
+        /* Slide Styles */
+        .slide {
+            padding: 40px 50px;
+            flex-grow: 1;
+            display: none; /* Hide all slides by default */
+            animation: fadeIn 0.5s ease-in-out;
+        }
 
-### **Slide 1: Early Life & The House of Wisdom**
+        .slide.active {
+            display: block; /* Show the active slide */
+        }
 
+        .slide h2 {
+            font-size: 2em;
+            color: #006a71;
+            border-bottom: 3px solid #006a71;
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+        
+        .slide-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
 
+        .slide-text {
+            flex: 2;
+        }
+        
+        .slide-image {
+            flex: 1;
+            text-align: center;
+        }
 
-**Muhammad ibn Musa al-Khwarizmi** (c. 780 – c. 850 CE) was a Persian scholar who worked in Baghdad during the Islamic Golden Age.
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-* **Key Fact:** He was a leading member of the **House of Wisdom**, a legendary intellectual center where the world's scientific and mathematical knowledge was gathered, translated, and built upon.
-* **His Environment:** This unique setting gave him access to Greek, Indian, and Persian mathematical traditions, which he synthesized to create something entirely new.
+        /* Navigation Buttons */
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
 
----
+        .nav-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
 
-### **Slide 2: Major Contribution #1 - The Father of Algebra**
+        .nav-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        
+        .nav-button:disabled {
+            background-color: #c0c0c0;
+            cursor: not-allowed;
+            transform: none;
+        }
 
+        /* Resource Buttons */
+        .resource-button {
+            background-color: #28a745;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .resource-button:hover {
+            background-color: #218838;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
+    </style>
+</head>
+<body>
 
-Al-Khwarizmi's most famous work, *The Compendious Book on Calculation by Completion and Balancing*, revolutionized mathematics.
+    <div class="presentation-container">
 
-* **Key Fact:** The word "**algebra**" comes directly from the Arabic word **`al-jabr`** in his book's title. It refers to the method of "completing" an equation by moving negative terms to the other side.
-* **Why It Was Revolutionary:** He was the first to treat algebra as its own discipline. He created a **systematic, step-by-step method** for solving linear and quadratic equations, which was a radical departure from the one-off solutions of the past.
+        <!-- Slide 1 -->
+        <div class="slide active" id="slide1">
+            <h2>1. Early Life & The House of Wisdom</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <p><strong>Muhammad ibn Musa al-Khwarizmi (c. 780 – c. 850)</strong> was a Persian mathematician and astronomer from the Islamic Golden Age.</p>
+                    <ul>
+                        <li><strong>A Center of Knowledge:</strong> He was a leading scholar at the legendary <strong>House of Wisdom</strong> in Baghdad, where the world's scientific knowledge was collected and studied.</li>
+                        <li><strong>Practical Thinker:</strong> His work was focused on creating clear, logical, and repeatable methods to solve real-world problems in areas like inheritance, trade, and land measurement.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Al-Ma%27mun%27s_Observatory_in_Baghdad.jpg" alt="Artistic depiction of the House of Wisdom in Baghdad">
+                </div>
+            </div>
+        </div>
 
----
+        <!-- Slide 2 -->
+        <div class="slide" id="slide2">
+            <h2>2. Major Contribution: The Father of Algebra</h2>
+             <div class="slide-content">
+                <div class="slide-text">
+                    <p>His most famous book, <em>The Compendious Book on Calculation by Completion and Balancing</em>, introduced a systematic way of solving equations.</p>
+                    <ul>
+                        <li><strong>Origin of the Name:</strong> The word "<strong>algebra</strong>" comes from the Arabic word <strong>`al-jabr`</strong> in his book's title, which refers to "restoring" or balancing equations.</li>
+                        <li><strong>A Universal Framework:</strong> Before Al-Khwarizmi, math often involved special tricks for specific problems. He created a universal, step-by-step framework that could be applied to whole categories of problems.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Al-Khwarizmi-Algebra.jpg" alt="Page from Al-Khwarizmi's algebra manuscript">
+                </div>
+            </div>
+        </div>
 
-### **Slide 3: Major Contribution #2 - The Birth of the Algorithm**
+        <!-- Slide 3 -->
+        <div class="slide" id="slide3">
+            <h2>3. The Birth of the "Algorithm"</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                     <p>This is Al-Khwarizmi's most direct and profound connection to the world of computers and artificial intelligence.</p>
+                    <ul>
+                        <li><strong>A Name for a Process:</strong> The word "<strong>algorithm</strong>" is the Latin version of his name, *al-Khwarizmi*. His methods were so influential that his name became the word for the process itself.</li>
+                        <li><strong>The Core Idea:</strong> An algorithm is simply a set of well-defined, step-by-step instructions to solve a problem. This is the fundamental building block of all computer programming.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Euclidean_algorithm_1071_462_animation.gif/300px-Euclidean_algorithm_1071_462_animation.gif" alt="Animation of a simple algorithm">
+                </div>
+            </div>
+        </div>
 
-This is his most profound and direct link to the modern world of computing.
+        <!-- Slide 4 -->
+        <div class="slide" id="slide4">
+            <h2>4. Influence on Modern Artificial Intelligence</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                     <p>Al-Khwarizmi is not a pioneer of AI, but rather the "<strong>Grandfather of Computer Science</strong>." He created the tools that make AI possible.</p>
+                    <ul>
+                        <li><strong>The Chain of Innovation:</strong> The path from his work to AI is direct: Al-Khwarizmi's Methods ➡️ The Algorithm ➡️ Computer Science ➡️ Artificial Intelligence.</li>
+                        <li><strong>AI's Foundation:</strong> Every "decision" an AI makes is the result of executing a complex algorithm. Without Al-Khwarizmi's work, the logical language of computers would not exist.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Binary_code_in_a_magnifying_glass.jpg/640px-Binary_code_in_a_magnifying_glass.jpg" alt="Computer code representing an algorithm">
+                </div>
+            </div>
+        </div>
 
-* **Key Fact:** The word **"algorithm"** is a Latinized version of his own name, *al-Khwarizmi*. His methods were so influential that his name became the word for the process itself.
-* **The Core Concept:** An algorithm is a finite list of well-defined, step-by-step instructions to solve a problem. Think of it as a perfect, repeatable recipe. This idea is the fundamental building block of all computer programming.
+        <!-- Slide 5 -->
+        <div class="slide" id="slide5">
+            <h2>5. Additional Resources</h2>
+            <p>Click the buttons below to dive deeper into the life of Al-Khwarizmi and the concepts he pioneered.</p>
+            <div>
+                <a href="https://www.youtube.com/watch?v=vKLnuWCxBVo" target="_blank"><button class="nav-button resource-button">Watch: Father of Mathematics (Video)</button></a>
+                <a href="https://www.khanacademy.org/computing/computer-science/algorithms/intro-to-algorithms/v/what-are-algorithms" target="_blank"><button class="nav-button resource-button">Watch: What is an Algorithm?</button></a>
+                <a href="https://kids.britannica.com/kids/article/Al-Khwarizmi/399905" target="_blank"><button class="nav-button resource-button">Read: Al-Khwarizmi for Students</button></a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+            <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        function showSlide(slideNumber) {
+            // Hide all slides
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById('slide' + i).classList.remove('active');
+            }
+            // Show the correct slide
+            document.getElementById('slide' + slideNumber).classList.add('active');
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = (slideNumber === 1);
+            document.getElementById('nextBtn').disabled = (slideNumber === totalSlides);
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlide(currentSlide);
+        }
+
+        // Initialize the first slide
+        showSlide(currentSlide);
+    </script>
+
+</body>
+</html>
+a perfect, repeatable recipe. This idea is the fundamental building block of all computer programming.
 
 ---
 
