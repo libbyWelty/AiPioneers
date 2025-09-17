@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvin Minsky: The Architect of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .slide {
+            display: none; /* Hidden by default */
+        }
+        .slide.active {
+            display: block; /* Shown when active */
+        }
+        /* Simple fade transition */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .slide.active {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 flex items-center justify-center min-h-screen p-4">
+
+    <main class="w-full max-w-4xl mx-auto">
+        <div id="presentation-container" class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <!-- Slides will be injected here by JS -->
+            <div id="slides-wrapper" class="p-8 md:p-12">
+
+                <!-- Slide 1: Title Slide -->
+                <div class="slide active">
+                    <div class="text-center">
+                        <img src="https://placehold.co/800x400/334155/E2E8F0?text=Marvin+Minsky" alt="Portrait of Marvin Minsky" class="w-full max-w-lg mx-auto rounded-lg mb-8 shadow-md">
+                        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-2">Marvin Minsky: The Architect of AI</h1>
+                        <p class="text-xl md:text-2xl text-slate-600">A Pioneer's Journey and Lasting Legacy</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Early Life and Education -->
+                <div class="slide">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-sky-500 pb-2">Early Life & Education</h2>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <img src="https://placehold.co/600x400/64748B/E2E8F0?text=Early+Computer" alt="An early computer model" class="rounded-lg shadow-md mb-4 md:mb-0">
+                        </div>
+                        <div>
+                             <ul class="list-disc list-inside space-y-3 text-lg">
+                                <li>Born in New York City in 1927.</li>
+                                <li>Attended the Bronx High School of Science.</li>
+                                <li>Served in the U.S. Navy during WWII.</li>
+                                <li>Graduated from Harvard with a B.A. in Mathematics (1950).</li>
+                                <li>Earned his Ph.D. in Mathematics from Princeton (1954).</li>
+                                <li>Built the **SNARC**, the first neural network learning machine, at Princeton.</li>
+                            </ul>
+                            <a href="https://www.youtube.com/watch?v=QlKSo_aIe_w" target="_blank" class="mt-6 inline-block bg-sky-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-sky-700 transition-colors shadow">
+                                Watch: Minsky's Early Work
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Major Contributions -->
+                <div class="slide">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-sky-500 pb-2">Major Contributions</h2>
+                     <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-3 text-sky-800">The Society of Mind Theory</h3>
+                            <img src="https://placehold.co/600x300/64748B/E2E8F0?text=Society+of+Mind+Diagram" alt="Society of Mind Diagram" class="rounded-lg shadow-sm mb-4">
+                            <p>Proposed in his 1986 book, this theory suggests intelligence emerges from the interactions of many simple, non-intelligent "agents." This "society" of agents collaborates to produce complex thought.</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-3 text-sky-800">Frame Theory of Knowledge</h3>
+                            <p class="mb-4">Introduced in the mid-1970s, "frames" are data structures representing stereotyped situations. This allows AI to make assumptions and inferences, a crucial step towards common-sense reasoning.</p>
+                             <a href="https://web.media.mit.edu/~minsky/papers/Frames/frames.html" target="_blank" class="mt-4 inline-block bg-sky-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-sky-700 transition-colors shadow">
+                                Read: "A Framework for Representing Knowledge"
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 4: AI Field Contributions -->
+                <div class="slide">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-sky-500 pb-2">Shaping the Field of AI</h2>
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/2">
+                            <h3 class="text-2xl font-bold mb-3 text-sky-800">Dartmouth Workshop (1956)</h3>
+                            <p class="text-lg mb-4">Minsky was a principal organizer of this seminal event, widely considered the birthplace of AI as a formal discipline. The term "artificial intelligence" was coined for this workshop.</p>
+                            <h3 class="text-2xl font-bold mb-3 text-sky-800">MIT AI Laboratory</h3>
+                            <p class="text-lg mb-4">He co-founded the lab with John McCarthy in 1959, establishing it as a world-leading center for AI research that fostered decades of innovation.</p>
+                             <a href="https://www.cantorsparadise.com/the-dartmouth-workshop-the-birth-of-artificial-intelligence-3debe6fde5bd" target="_blank" class="mt-4 inline-block bg-sky-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-sky-700 transition-colors shadow">
+                                Learn about the Dartmouth Workshop
+                            </a>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/600x400/64748B/E2E8F0?text=Dartmouth+Workshop+1956" alt="Attendees of the 1956 Dartmouth Workshop" class="rounded-lg shadow-md">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Slide 5: Influence on Modern AI -->
+                <div class="slide">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-sky-500 pb-2">Influence on Modern AI</h2>
+                     <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <img src="https://placehold.co/600x450/334155/E2E8F0?text=Modern+AI+Brain" alt="Modern AI Brain" class="rounded-lg shadow-md mb-4 md:mb-0">
+                        </div>
+                        <div>
+                             <p class="text-lg mb-4">Minsky's work on knowledge representation and common-sense reasoning remains a core challenge in AI.</p>
+                             <p class="text-lg mb-4">His "Society of Mind" theory influenced distributed AI and multi-agent systems.</p>
+                             <p class="text-lg mb-4">His critique in "Perceptrons" spurred the development of more complex, multi-layered neural networks that power today's deep learning revolution.</p>
+                             <p class="text-xl font-bold bg-sky-100 p-4 rounded-lg text-sky-900">His visionary ideas laid the groundwork for the AI technologies we use every day.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 6: Additional Resources -->
+                <div class="slide">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-sky-500 pb-2">Learn More</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-sky-800 mb-2">Videos</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><a href="https://www.youtube.com/watch?v=KY4sX9-b6hE" target="_blank" class="text-sky-600 hover:underline">Marvin Minsky: The Society of Mind (Lecture)</a></li>
+                                <li><a href="https://www.youtube.com/watch?v=1ZxdoV_y-vE" target="_blank" class="text-sky-600 hover:underline">A Conversation with Marvin Minsky</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-sky-800 mb-2">Books by Marvin Minsky</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><em>The Society of Mind</em> (1986)</li>
+                                <li><em>The Emotion Machine</em> (2006)</li>
+                                <li><em>Perceptrons</em> (with Seymour Papert, 1969)</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h3 class="text-2xl font-bold text-sky-800 mb-2">Articles & Tributes</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><a href="https://news.mit.edu/2016/marvin-minsky-obituary-0125" target="_blank" class="text-sky-600 hover:underline">MIT News Obituary: A Tribute to Marvin Minsky</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Navigation -->
+            <div id="navigation" class="flex justify-between p-4 bg-slate-200">
+                <button id="prevBtn" class="bg-slate-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-slate-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow">Previous</button>
+                <div id="slide-counter" class="text-slate-600 font-medium flex items-center">
+                    Slide <span id="current-slide-num">1</span> of <span id="total-slides-num"></span>
+                </div>
+                <button id="nextBtn" class="bg-sky-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-sky-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow">Next</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const currentSlideNum = document.getElementById('current-slide-num');
+            const totalSlidesNum = document.getElementById('total-slides-num');
+
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            totalSlidesNum.textContent = totalSlides;
+
+            function updateSlide() {
+                slides.forEach((slide, index) => {
+                    if (index === currentSlide) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+                
+                currentSlideNum.textContent = currentSlide + 1;
+
+                // Update button states
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
+            }
+
+            function nextSlide() {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    updateSlide();
+                }
+            }
+
+            function prevSlide() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlide();
+                }
+            }
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Allow keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'ArrowRight') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+
+            // Initial setup
+            updateSlide();
+        });
+    </script>
+
+</body>
+</html>
