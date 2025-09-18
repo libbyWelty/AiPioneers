@@ -6,21 +6,26 @@
     <title>The Pioneers of Artificial Intelligence</title>
     <style>
         /* --- Google Font --- */
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */ /* Removed Roboto font */
 
         /* --- Global Styles --- */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Times New Roman', Times, serif; /* Changed font to Times New Roman */
             background-color: #f0f2f5;
-            color: #333;
+            color: #000; /* Changed from #333 to black */
             margin: 0;
             padding: 20px;
             line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         /* --- Main Container --- */
         .container {
-            max-width: 1200px;
+            max-width: 800px;
+            width: 100%;
             margin: 0 auto;
             text-align: center;
         }
@@ -28,88 +33,83 @@
         /* --- Header & Subtitle --- */
         h1 {
             font-size: 3rem;
-            color: #2c3e50;
+            color: #FFB6C1; /* Changed title to baby pink */
             margin-bottom: 10px;
         }
 
         .intro-paragraph {
             font-size: 1.1rem;
-            color: #555;
+            color: #000; /* Changed from #555 to black */
             max-width: 800px;
             margin: 0 auto 40px auto;
         }
-
-        /* --- Pioneer Grid --- */
-        .pioneer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            text-align: left;
+        
+        /* --- Slideshow Container --- */
+        .slideshow-container {
+            position: relative;
+            max-width: 400px;
+            margin: auto;
         }
 
-        /* --- Pioneer Card --- */
+        /* --- Pioneer Card (for the slide) --- */
         .pioneer-card {
             background-color: #ffffff;
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
             display: flex;
             flex-direction: column;
-        }
-
-        .pioneer-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
         }
 
         .pioneer-card img {
             width: 100%;
-            height: 250px;
+            height: 350px;
             object-fit: cover;
+            object-position: top;
         }
         
         .card-content {
             padding: 20px;
             flex-grow: 1;
-            display: flex;
-            flex-direction: column;
         }
 
         .card-content h2 {
             margin-top: 0;
             margin-bottom: 5px;
-            color: #2c3e50;
+            color: #000; /* Changed from #2c3e50 to black */
         }
 
         .card-content .timeframe {
             font-size: 0.9rem;
-            color: #7f8c8d;
+            color: #000; /* Changed from #7f8c8d to black */
             margin-bottom: 15px;
         }
         
-        .card-button-container {
-            margin-top: auto; /* Pushes the button to the bottom */
+        /* --- Navigation Buttons --- */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        
-        .card-button {
+
+        .nav-button {
             display: inline-block;
-            background-color: #FFB6C1; /* Changed to baby pink */
-            color: #333; /* Changed text color for readability */
-            padding: 12px 20px;
+            background-color: #FFB6C1; /* Set to baby pink */
+            color: #000; /* Changed from #333 to black */
+            padding: 12px 25px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
             text-align: center;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .pioneer-card:hover .card-button {
-            background-color: #FFA5B0; /* Changed to a slightly darker pink for hover */
+        .nav-button:hover {
+            background-color: #FFA5B0; /* Slightly darker pink on hover */
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -118,142 +118,126 @@
     <div class="container">
         <h1>The Pioneers of Artificial Intelligence</h1>
         <p class="intro-paragraph">
-            An AI Pioneer is a visionary thinker, scientist, or engineer whose groundbreaking ideas and creations laid the essential groundwork for the field of artificial intelligence. They challenged the limits of computation, explored the nature of thought, and built the first systems that could learn, reason, and solve problems. These individuals transformed abstract theories into tangible realities, shaping the digital world we live in today.
+            An AI Pioneer is a visionary thinker whose creations laid the groundwork for artificial intelligence. Explore some of the key figures who shaped the digital world we live in today.
         </p>
 
-        <div class="pioneer-grid">
+        <!-- Slideshow container -->
+        <div id="slideshow-container" class="slideshow-container">
+            <div class="pioneer-card">
+                <img id="pioneer-image" src="" alt="AI Pioneer">
+                <div class="card-content">
+                    <h2 id="pioneer-name"></h2>
+                    <p id="pioneer-timeframe" class="timeframe"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next/previous buttons -->
+        <div class="nav-buttons">
+            <button id="prev-button" class="nav-button">Previous</button>
+            <button id="next-button" class="nav-button">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const pioneers = [
+            {
+                name: 'Al-Khwarizmi',
+                timeframe: 'c. 780 – c. 850',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Muhammad_ibn_Musa_al-Khwarizmi.jpg/800px-Muhammad_ibn_Musa_al-Khwarizmi.jpg'
+            },
+            {
+                name: 'George Boole',
+                timeframe: '1815 – 1864',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/George_Boole_color.jpg/800px-George_Boole_color.jpg'
+            },
+            {
+                name: 'Alan Turing',
+                timeframe: '1912 – 1954',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg'
+            },
+            {
+                name: 'Arthur Samuel',
+                timeframe: '1901 – 1990',
+                image: 'https://history-computer.com/ModernComputer/Software/images/Samuel.jpg'
+            },
+            {
+                name: 'Herbert Simon',
+                timeframe: '1916 – 2001',
+                image: 'https://upload.wikimedia.org/wikipedia/en/9/91/Herbert_A._Simon.jpg'
+            },
+            {
+                name: 'John McCarthy',
+                timeframe: '1927 – 2011',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/John_McCarthy_Stanford.jpg/800px-John_McCarthy_Stanford.jpg'
+            },
+            {
+                name: 'Marvin Minsky',
+                timeframe: '1927 – 2016',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Marvin_Minsky_at_OLPCb.jpg/800px-Marvin_Minsky_at_OLPCb.jpg'
+            },
+            {
+                name: 'Allen Newell',
+                timeframe: '1927 – 1992',
+                image: 'https://upload.wikimedia.org/wikipedia/en/b/b5/Allen_Newell.jpg'
+            },
+            {
+                name: 'Joseph Weizenbaum',
+                timeframe: '1923 – 2008',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Joseph_Weizenbaum_2_c_Christoph_Keese_und_Wolfgang_Michal.jpg/800px-Joseph_Weizenbaum_2_c_Christoph_Keese_und_Wolfgang_Michal.jpg'
+            },
+            {
+                name: 'Geoffrey Hinton',
+                timeframe: '1947 – Present',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Geoffrey_Hinton_at_the_2018_CIFAR_NepMachine_Learning_Summer_School_in_Toronto_on_July_10_2018_2_%2842630384205%29_%28cropped%29.jpg/800px-Geoffrey_Hinton_at_the_2018_CIFAR_NepMachine_Learning_Summer_School_in_Toronto_on_July_10_2018_2_%2842630384205%29_%28cropped%29.jpg'
+            },
+            {
+                name: 'Fei-Fei Li',
+                timeframe: '1976 – Present',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Fei-Fei_Li_in_2018.jpg/800px-Fei-Fei_Li_in_2018.jpg'
+            },
+            {
+                name: 'Ashish Vaswani',
+                timeframe: 'Contemporary',
+                image: 'https://format-com-cld-res.cloudinary.com/image/private/s--B5oe7s0g--/c_limit,g_center,h_1200,w_65535/fl_keep_iptc.progressive,q_95/v1/753385a538d613993108c95a973a113a/Ashish_headshot.jpg'
+            }
+        ];
+
+        let currentSlide = 0;
+
+        const pioneerImage = document.getElementById('pioneer-image');
+        const pioneerName = document.getElementById('pioneer-name');
+        const pioneerTimeframe = document.getElementById('pioneer-timeframe');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+
+        function showSlide(index) {
+            // This formula handles wrapping around in both directions
+            currentSlide = (index + pioneers.length) % pioneers.length;
             
-            <a href="Khwarizmi.html" class="pioneer-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Muhammad_ibn_Musa_al-Khwarizmi.jpg/800px-Muhammad_ibn_Musa_al-Khwarizmi.jpg" alt="Al-Khwarizmi">
-                <div class="card-content">
-                    <h2>Al-Khwarizmi</h2>
-                    <p class="timeframe">c. 780 – c. 850</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="boole.html" class="pioneer-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/George_Boole_color.jpg/800px-George_Boole_color.jpg" alt="George Boole">
-                <div class="card-content">
-                    <h2>George Boole</h2>
-                    <p class="timeframe">1815 – 1864</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
+            const pioneer = pioneers[currentSlide];
             
-            <a href="Turing.html" class="pioneer-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg" alt="Alan Turing">
-                <div class="card-content">
-                    <h2>Alan Turing</h2>
-                    <p class="timeframe">1912 – 1954</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
+            pioneerImage.src = pioneer.image;
+            pioneerImage.alt = pioneer.name;
+            pioneerName.textContent = pioneer.name;
+            pioneerTimeframe.textContent = pioneer.timeframe;
+        }
 
-            <a href="samuel.html" class="pioneer-card">
-                <img src="https://history-computer.com/ModernComputer/Software/images/Samuel.jpg" alt="Arthur Samuel">
-                <div class="card-content">
-                    <h2>Arthur Samuel</h2>
-                    <p class="timeframe">1901 – 1990</p>
-                     <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
+        // Event listeners for the buttons
+        prevButton.addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+        });
 
-            <a href="Simon.html" class="pioneer-card">
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/91/Herbert_A._Simon.jpg" alt="Herbert Simon">
-                <div class="card-content">
-                    <h2>Herbert Simon</h2>
-                    <p class="timeframe">1916 – 2001</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="mcCarthy.html" class="pioneer-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/John_McCarthy_Stanford.jpg/800px-John_McCarthy_Stanford.jpg" alt="John McCarthy">
-                <div class="card-content">
-                    <h2>John McCarthy</h2>
-                    <p class="timeframe">1927 – 2011</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
+        nextButton.addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+        });
 
-            <a href="Minsky.html" class="pioneer-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Marvin_Minsky_at_OLPCb.jpg/800px-Marvin_Minsky_at_OLPCb.jpg" alt="Marvin Minsky">
-                <div class="card-content">
-                    <h2>Marvin Minsky</h2>
-                    <p class="timeframe">1927 – 2016</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="Newell.html" class="pioneer-card">
-                <img src="https://upload.wikimedia.org/wikipedia/en/b/b5/Allen_Newell.jpg" alt="Allen Newell">
-                <div class="card-content">
-                    <h2>Allen Newell</h2>
-                    <p class="timeframe">1927 – 1992</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="Weizenbaum.html" class="pioneer-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Joseph_Weizenbaum_2_c_Christoph_Keese_und_Wolfgang_Michal.jpg/800px-Joseph_Weizenbaum_2_c_Christoph_Keese_und_Wolfgang_Michal.jpg" alt="Joseph Weizenbaum">
-                <div class="card-content">
-                    <h2>Joseph Weizenbaum</h2>
-                    <p class="timeframe">1923 – 2008</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="Hinton.html" class="pioneer-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Geoffrey_Hinton_at_the_2018_CIFAR_NepMachine_Learning_Summer_School_in_Toronto_on_July_10_2018_2_%2842630384205%29_%28cropped%29.jpg/800px-Geoffrey_Hinton_at_the_2018_CIFAR_NepMachine_Learning_Summer_School_in_Toronto_on_July_10_2018_2_%2842630384205%29_%28cropped%29.jpg" alt="Geoffrey Hinton">
-                <div class="card-content">
-                    <h2>Geoffrey Hinton</h2>
-                    <p class="timeframe">1947 – Present</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="li.html" class="pioneer-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Fei-Fei_Li_in_2018.jpg/800px-Fei-Fei_Li_in_2018.jpg" alt="Fei-Fei Li">
-                <div class="card-content">
-                    <h2>Fei-Fei Li</h2>
-                    <p class="timeframe">1976 – Present</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="Vaswani.html" class="pioneer-card">
-                <img src="https://format-com-cld-res.cloudinary.com/image/private/s--B5oe7s0g--/c_limit,g_center,h_1200,w_65535/fl_keep_iptc.progressive,q_95/v1/753385a538d613993108c95a973a113a/Ashish_headshot.jpg" alt="Ashish Vaswani">
-                <div class="card-content">
-                    <h2>Ashish Vaswani</h2>
-                    <p class="timeframe">Contemporary</p>
-                    <div class="card-button-container">
-                        <span class="card-button">View Presentation</span>
-                    </div>
-                </div>
-            </a>
-
-        </div> </div> </body>
+        // Show the first slide initially
+        window.onload = () => {
+            showSlide(0);
+        };
+    </script>
+</body>
 </html>
+
+
